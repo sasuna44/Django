@@ -10,7 +10,7 @@
           <h5 class="card-title">{{book.title}}</h5>
           <p class="card-text"><strong>{{book.author}} </strong></p>
           <p class ="card-text">Number of Pages:{{book.numberOfPages}}</p>
-          <p class = "card-text">{{book.price}}</p>
+          <p class = "card-text">Book Price : {{book.price}} $ </p>
           <a href="{% url 'BookDetails' book.id %}" class="btn  btn-book">View Details</a>        </div>
      </div>
   {%endfor%}
