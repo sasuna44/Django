@@ -1,0 +1,41 @@
+*{margin: 0; padding: 0; box-sizing: border-box; }
+body{
+    text-align: center;
+    background-color:#BED7DC ;
+    color: #496989;
+    height: 100vh;
+    font-family:monospace;
+}
+.card-books>img{
+    width: 100%;
+    height: 20rem;
+}
+.nav-bar{
+ justify-content: space-evenly;
+  width: 34rem;
+}
+
+.left-container , .right-container{
+    background-color: #F1EEDC;
+    border-radius: 2rem;
+}
+.left-container>img{
+    width: 40rem;
+    height: 40rem;
+    border-radius: 2rem;
+}
+.right-container{
+    font-size: 1.5rem;
+}
+.btn-book{
+    background-color: #B3C8CF;
+}
+.btn-book:hover{
+    background-color: #496989;
+    color: #F1EEDC;
+}
+.form-container{
+    width: 40rem;
+    background-color: #F1EEDC;
+    border-radius: 1.5rem;
+}

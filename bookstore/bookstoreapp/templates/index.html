@@ -1,0 +1,17 @@
+{% extends 'layout/base.html'%}
+{%load static %}
+{% block title %} Books {%endblock%}
+
+{%block content%}
+    {% for book in books  %}
+    <div class="card card-books p-0 m-5 border-0 text-dark"  style="width: 20rem;">
+        <img src="{% static 'bookstoreapp/images/'|add:book.image %}" class="card-img-top " alt="{{book.title}}">        
+        <div class="card-body">
+          <h5 class="card-title">{{book.title}}</h5>
+          <p class="card-text"><strong>{{book.author}} </strong></p>
+          <p class ="card-text">Number of Pages:{{book.numberOfPages}}</p>
+          <p class = "card-text">{{book.price}}</p>
+          <a href="{% url 'BookDetails' book.id %}" class="btn  btn-book">View Details</a>        </div>
+     </div>
+  {%endfor%}
+{%endblock%}
