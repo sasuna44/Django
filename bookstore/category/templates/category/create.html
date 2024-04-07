@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html'%}
+{%load static %}
+{% block title %} Create Category {%endblock%}
+
+{%block content%}
+<div class="container mt-4 w-75 bg-light p-5">
+    <h1>Create New Category</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label text-start" for="id_name">Name:</label>
+            {{ form.name }}
+            {% for error in form.name.errors %}
+                <div class="error-message text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="id_description">Description:</label>
+            {{ form.description }}
+            {% for error in form.description.errors %}
+            <div class="error-message text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('input, textarea, select').forEach(function(input) {
+            input.removeAttribute('required');
+        });
+    });
+</script>
+
+{%endblock%}

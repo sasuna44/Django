@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html'%}
+{%load static %}
+{% block title %} Create Category {%endblock%}
+
+{%block content%}
+
+<h2>Edit Category</h2>
+<div class="card w-50 rounded-5 p-5 >
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+</div>
+{%endblock%}

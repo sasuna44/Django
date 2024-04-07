@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html'%}
+{%load static %}
+{% block title %} Create Category {%endblock%}
+
+{%block content%}
+
+<h2 class="mb-4" >Category Details</h2>
+<div class="card w-50 rounded-5 p-5">
+    <div class="card-body">
+        <h5 class="card-title fw-bold fs-4">{{ category.name }}</h5>
+        <p class="card-text fs-5">Description: {{ category.description }}</p>
+        <form id="delete-form" action="{% url 'category.delete' category.id %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger m-4">Delete</button>
+        </form>
+        <a href="{% url 'category.update' category.id %}" class="btn btn-primary m-4">Update</a>
+    </div>
+</div>
+
+{%endblock%}

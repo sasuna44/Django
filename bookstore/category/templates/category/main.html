@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html'%}
+{%load static %}
+
+{% block title %}  Categories {%endblock%}
+
+{%block content%}
+<h1>Welcome {{user.username}}</h1>
+
+<div class="container-fluid w-75 mt-4">
+    <h2 class="p-5">Categories</h2>
+    <table class="table category-table rounded-5 text-light px-5" style="background-color: #496989; color: #F1EEDC;">
+        <thead class="p-4">
+            <tr class="pb-3">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description }}</td>
+                <td>
+                    <a href="{{category.show_url}}" class="btn btn-light text-primary fs-6">Show</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn btn-primary">
+        <a href="{% url 'category.create' %}" style="color: #f7efd2;">Add New Category</a>
+    </button>
+</div>
+
+{%endblock%}
+
+

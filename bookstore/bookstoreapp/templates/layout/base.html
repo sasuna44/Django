@@ -20,7 +20,8 @@
                   <div class="collapse navbar-collapse" id="navbarNav" >
                     <ul class="navbar-nav nav-bar"  >
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'Bookspage' %}">Books</a>
+                          <a class="nav-link" href="{% url 'Books.index' %}">Books</a>
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'AboutUspage' %}">AboutUs</a>
@@ -28,13 +29,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'ContactUspage' %}">ContactUs</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'login.index' %}">Login</a>
+              
+                      </li>
                     
                     </ul>
                   </div>
                 </div>
               </nav>
         </div>
-          <div class="row justify-content-evenly py-5 gx-0">
+          <div class="row justify-content-evenly py-5 gx-0 ">
             {% block content%}
             {% endblock %}
           </div>
